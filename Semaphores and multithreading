@@ -4,18 +4,7 @@
 #include<semaphore.h>
 char buf[24];
 sem_t mutex;
-void myfunction1(void *ptr)
-{
-    sleep(1);
-    char *msg=(char *)ptr;
-    printf("%s\n",msg);
 
-    sem_wait(&mutex);
-    sprintf(buf,"%s","function fb()");
-    printf("%s\n",buf);
-    sem_post(&mutex);
-    pthread_exit(0);
-}
 int main()
 {
 return 0;
