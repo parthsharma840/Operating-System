@@ -1,0 +1,21 @@
+void myfunction2(void *ptr)
+{
+    char *msg=(char *)ptr;
+    printf("%s\n",msg);
+    sem_wait(&mutex);
+    sprintf(buf,"%s","function fa()");
+    printf("%s\n",buf);
+    sem_post(&mutex);
+    pthread_exit(0);
+}
+void myfunction3(void *ptr)
+{
+    sleep(2);
+    char *msg=(char *)ptr;
+    printf("%s\n",msg);
+    sem_wait(&mutex);
+    sprintf(buf,"%s","function fc()");
+    printf("%s\n",buf);
+    sem_post(&mutex);
+    pthread_exit(0);
+}
